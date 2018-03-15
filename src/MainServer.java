@@ -13,6 +13,7 @@ public class MainServer {
     {
         Server s=new Server();
         s.connetti();
-       // s.parla();
+        //s.parla();
     }
+    
 }

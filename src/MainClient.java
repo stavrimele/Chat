@@ -13,6 +13,5 @@ public class MainClient {
     {
         Client c=new Client();
         c.connetti();
-        c.parla();
-    }
+    }   
 }
