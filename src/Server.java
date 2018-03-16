@@ -59,7 +59,6 @@ public class Server {
            catch(Exception e){
                System.err.println("Errore di I/O!");
         }
-        g= new Gestore(connection,"Server");
-        g.lettura();
+        g=new Gestore(connection,"Server");
     }
 }

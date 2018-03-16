@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Chat">
+  <ClassDiagramComponents>
+    <Class name="Client" package="" visibility="public" xPosition="46.0" yPosition="302.0">
+      <Fields>
+        <Field name="connection" type="Socket" visibility="package"/>
+        <Field name="serverAddress" type="String" visibility="package"/>
+        <Field name="port" type="int" visibility="package"/>
+        <Field name="out" type="DataOutputStream" visibility="package"/>
+        <Field name="in" type="DataInputStream" visibility="package"/>
+        <Field name="g" type="Gestore" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="connetti" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Gestore" package="" visibility="public" xPosition="331.0" yPosition="98.0">
+      <Fields>
+        <Field name="RED" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BLUE" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="conn" type="Socket" visibility="package"/>
+        <Field name="out" type="DataOutputStream" visibility="package"/>
+        <Field name="in" type="DataInputStream" visibility="package"/>
+        <Field name="user" type="String" visibility="package"/>
+        <Field name="user2" type="String" visibility="package"/>
+        <Field name="echo" type="String" visibility="package"/>
+        <Field name="end" type="boolean" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="Socket" name="connection"/>
+          <Argument type="String" name="user"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="lettura" returnType="void" visibility="public"/>
+        <Method name="scrittura" returnType="void" visibility="public"/>
+        <Method name="smile" returnType="void" visibility="public"/>
+        <Method name="like" returnType="void" visibility="public"/>
+        <Method name="echo" returnType="void" visibility="public"/>
+        <Method name="menu" returnType="void" visibility="public"/>
+        <Method name="chiudi" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MainClient" package="" visibility="public" xPosition="29.0" yPosition="98.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MainServer" package="" visibility="public" xPosition="691.0" yPosition="98.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Server" package="" visibility="public" xPosition="708.0" yPosition="302.0">
+      <Fields>
+        <Field name="RED" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BLUE" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="port" type="int" visibility="package"/>
+        <Field name="in" type="DataInputStream" visibility="package"/>
+        <Field name="out" type="DataOutputStream" visibility="package"/>
+        <Field name="now" type="Date" visibility="package"/>
+        <Field name="sSocket" type="ServerSocket" visibility="package"/>
+        <Field name="connection" type="Socket" visibility="package"/>
+        <Field name="g" type="Gestore" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="connetti" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="g" source="Client" target="Gestore" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="g" source="Server" target="Gestore" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -21,8 +21,6 @@ import java.util.logging.Logger;
  * @author Stavri Mele
  */
 public class Client {
-    public static final String RED = "\u001B[31m";  //client output
-    public static final String BLUE = "\u001B[34m"; //server output
     Socket connection = null;
     String serverAddress = "";
     int port;
@@ -41,8 +39,9 @@ public class Client {
     {
         try
         {
-        connection = new Socket(serverAddress, port);
-        System.out.println("Connessione aperta");
+            //dichiarazione oggetto socket
+            connection = new Socket(serverAddress, port);
+            System.out.println("Connessione aperta");
         }
         catch(ConnectException e){
             System.err.println("Server non disponibile!");
@@ -54,9 +53,7 @@ public class Client {
             System.err.println(e2);
             e2.printStackTrace();
         }
-        
         g=new Gestore(connection,"Client");
-        g.parla();
     }
     
 }
